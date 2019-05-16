@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:6-alpine'
+      args 'MSYS_NO_PATHCONV=1 git blame -L/pathconv/ msys2_path_conv.cc'
     }
 
   }
