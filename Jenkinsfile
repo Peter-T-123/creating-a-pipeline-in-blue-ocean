@@ -26,6 +26,6 @@ pipeline {
   }
   environment {
     CI = 'true'
-    MSYS_NO_PATHCONV = '1 git blame -L/pathconv/ msys2_path_conv.cc'
+    MSYS_NO_PATHCONV = '1'
   }
 }
