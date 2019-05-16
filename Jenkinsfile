@@ -2,8 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:6-alpine'
-      args '''MSYS_NO_PATHCONV=1
--p 3000:3000'''
+      args '-p 3000:3000'
     }
 
   }
@@ -28,5 +27,6 @@ pipeline {
   }
   environment {
     CI = 'true'
+    MSYS_NO_PATHCONV = '1'
   }
 }
