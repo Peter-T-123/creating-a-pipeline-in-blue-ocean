@@ -2,7 +2,8 @@ pipeline {
   agent {
     docker {
       image 'node:6-alpine'
-      args '-p 3000:3000'
+      args '''-p 3000:3000
+-v C:\\Program Files (x86)\\Jenkins\\workspace\\proofofconceptpipeline_master'''
     }
 
   }
