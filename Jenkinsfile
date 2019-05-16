@@ -3,7 +3,7 @@ pipeline {
     docker {
       image 'node:6-alpine'
       args '''-p 3000:3000
--v C:\\Program Files (x86)\\Jenkins\\workspace\\proofofconceptpipeline_master'''
+-v c:\\program files (x86)\\jenkins\\workspace\\proofofconceptpipeline_master'''
     }
 
   }
@@ -28,6 +28,5 @@ pipeline {
   }
   environment {
     CI = 'true'
-    MSYS_NO_PATHCONV = '1'
   }
 }
