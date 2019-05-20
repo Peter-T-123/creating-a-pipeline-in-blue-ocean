@@ -30,14 +30,6 @@ pipeline {
       }
     }
   }
-	post {
-        always {
-            echo "Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
-            
-            slackSend channel: '#logs',
-            color: 'danger',
-            message: "Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
-        }
     }
   environment {
     CI = 'true'
