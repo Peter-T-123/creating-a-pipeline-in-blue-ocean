@@ -22,6 +22,12 @@ pipeline {
         sh './jenkins/scripts/deliver.sh'
         input 'Finished using the web site? (Click "Proceed" to continue)'
         sh './jenkins/scripts/kill.sh'
+        slackSend()
+      }
+    }
+    stage('Post-Pipeline') {
+      steps {
+        slackSend(token: 'ahWUMnlmfuxO7UErPIrmwf2f', tokenCredentialId: 'sadface', color: 'green', channel: '#logs', message: 'Build Finished -$[env.JOB_NAME} ${ev.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)', baseUrl: 'devcops-workspace.slack.com')
       }
     }
   }
