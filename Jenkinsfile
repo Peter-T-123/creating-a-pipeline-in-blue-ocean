@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Post-Pipeline') {
       steps {
-        slackSend(token: 'ahWUMnlmfuxO7UErPIrmwf2f', tokenCredentialId: 'sadface', channel: '#logs', message: 'Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)', baseUrl: 'https://devcops-workspace.slack.com/services/hooks/jenkins-ci/', teamDomain: 'https://devcops-workspace.slack.com')
+        slackSend(token: 'ahWUMnlmfuxO7UErPIrmwf2f', tokenCredentialId: 'sadface', channel: '#logs', message: 'Build Started -  Project: $JOB_NAME Build Nummer: BUILD_NUMBER ($BUILD_URL)', baseUrl: 'https://devcops-workspace.slack.com/services/hooks/jenkins-ci/', teamDomain: 'https://devcops-workspace.slack.com')
       }
     }
   }
